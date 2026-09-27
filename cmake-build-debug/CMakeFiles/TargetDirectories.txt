@@ -1,0 +1,3 @@
+/Users/tanchutat/Documents/PersonalProgramming/ParallelComputingTutorial/cmake-build-debug/CMakeFiles/ParallelComputingTutorial.dir
+/Users/tanchutat/Documents/PersonalProgramming/ParallelComputingTutorial/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/tanchutat/Documents/PersonalProgramming/ParallelComputingTutorial/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -1,8 +1,7 @@
-#include "omp.h"
+#include <stdio.h>
 
-main() {
-
-#pragma omp parallel num_thread(65) {
-
-}
+int main(void)
+{
+    printf("Hello\n");
+    return 0;
 }
