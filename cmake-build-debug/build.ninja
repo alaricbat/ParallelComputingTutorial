@@ -103,6 +103,24 @@ build CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel.c.o: C_COMPIL
   OBJECT_DIR = CMakeFiles/ParallelComputingTutorial.dir
   OBJECT_FILE_DIR = CMakeFiles/ParallelComputingTutorial.dir/C/parallel
 
+build CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel_sequential.c.o: C_COMPILER__ParallelComputingTutorial_unscanned_Debug /Users/tanchutat/Documents/PersonalProgramming/ParallelComputingTutorial/C/parallel/parallel_sequential.c || cmake_object_order_depends_target_ParallelComputingTutorial
+  DEP_FILE = CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel_sequential.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fdiagnostics-color=always -fopenmp
+  OBJECT_DIR = CMakeFiles/ParallelComputingTutorial.dir
+  OBJECT_FILE_DIR = CMakeFiles/ParallelComputingTutorial.dir/C/parallel
+
+build CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel_direct.c.o: C_COMPILER__ParallelComputingTutorial_unscanned_Debug /Users/tanchutat/Documents/PersonalProgramming/ParallelComputingTutorial/C/parallel/parallel_direct.c || cmake_object_order_depends_target_ParallelComputingTutorial
+  DEP_FILE = CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel_direct.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fdiagnostics-color=always -fopenmp
+  OBJECT_DIR = CMakeFiles/ParallelComputingTutorial.dir
+  OBJECT_FILE_DIR = CMakeFiles/ParallelComputingTutorial.dir/C/parallel
+
+build CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel_for.c.o: C_COMPILER__ParallelComputingTutorial_unscanned_Debug /Users/tanchutat/Documents/PersonalProgramming/ParallelComputingTutorial/C/parallel/parallel_for.c || cmake_object_order_depends_target_ParallelComputingTutorial
+  DEP_FILE = CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel_for.c.o.d
+  FLAGS = -g -std=gnu11 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6 -fdiagnostics-color=always -fopenmp
+  OBJECT_DIR = CMakeFiles/ParallelComputingTutorial.dir
+  OBJECT_FILE_DIR = CMakeFiles/ParallelComputingTutorial.dir/C/parallel
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ParallelComputingTutorial
@@ -111,7 +129,7 @@ build CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel.c.o: C_COMPIL
 #############################################
 # Link the executable ParallelComputingTutorial
 
-build ParallelComputingTutorial: C_EXECUTABLE_LINKER__ParallelComputingTutorial_Debug CMakeFiles/ParallelComputingTutorial.dir/C/main.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_reduction.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_if.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_firstprivate.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_shared.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_private.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_random.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_array.c.o CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel.c.o | /opt/homebrew/Cellar/gcc/16.2.0/lib/gcc/current/libgomp.dylib
+build ParallelComputingTutorial: C_EXECUTABLE_LINKER__ParallelComputingTutorial_Debug CMakeFiles/ParallelComputingTutorial.dir/C/main.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_reduction.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_if.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_firstprivate.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_shared.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_private.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_random.c.o CMakeFiles/ParallelComputingTutorial.dir/C/clause/clause_array.c.o CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel.c.o CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel_sequential.c.o CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel_direct.c.o CMakeFiles/ParallelComputingTutorial.dir/C/parallel/parallel_for.c.o | /opt/homebrew/Cellar/gcc/16.2.0/lib/gcc/current/libgomp.dylib
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX15.2.sdk -mmacosx-version-min=14.6
   LINK_LIBRARIES = /opt/homebrew/Cellar/gcc/16.2.0/lib/gcc/current/libgomp.dylib
   OBJECT_DIR = CMakeFiles/ParallelComputingTutorial.dir
