@@ -1,0 +1,86 @@
+#include <omp.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+#define MAX_TIMER_SLOTS 64
+#define TH_SZ 4
+#define SZ 24
+
+double toggle_time(int slot_idx, const char *label) {
+    static __thread struct timespec start_times[MAX_TIMER_SLOTS];
+    static __thread int is_timer_active[MAX_TIMER_SLOTS] = {0};
+
+    if (slot_idx < 0 || slot_idx >= MAX_TIMER_SLOTS) {
+        exit(EXIT_FAILURE);
+    }
+
+    if (!is_timer_active[slot_idx]) {
+        clock_gettime(CLOCK_MONOTONIC, &start_times[slot_idx]);
+        is_timer_active[slot_idx] = 1;
+        return 0.0;
+    }
+
+    struct timespec end_time;
+    clock_gettime(CLOCK_MONOTONIC, &end_time);
+    is_timer_active[slot_idx] = 0;
+
+    double seconds = (double)(end_time.tv_sec - start_times[slot_idx].tv_sec);
+    double nanoseconds = (double)(end_time.tv_nsec - start_times[slot_idx].tv_nsec);
+    double elapsed_time = seconds + nanoseconds * 1e-9;
+
+    printf("[%s] Executed time: %.6f s.\n", label, elapsed_time);
+
+    return elapsed_time;
+}
+
+void merge_for() {
+
+    int th;
+
+#pragma omp parallel for default(none) private(th) num_threads(TH_SZ)
+    for (int i = 0; i < SZ; i++) {
+        th = omp_get_thread_num();
+        printf("Thread ID %d: running. [%d] \n", th, i);
+    }
+}
+
+void merge_sections() {
+    int th;
+#pragma omp parallel sections default(none) private(th) num_threads(TH_SZ)
+    {
+        #pragma omp section
+        {
+            th = omp_get_thread_num();
+            printf("[Section][1]: Thread <%d> execute. \n", th);
+        }
+
+        #pragma omp section
+        {
+            th = omp_get_thread_num();
+            printf("[Section][2]: Thread <%d> execute. \n", th);
+        }
+
+        #pragma omp section
+        {
+            th = omp_get_thread_num();
+            printf("[Section][3]: Thread <%d> execute. \n", th);
+        }
+
+    }
+}
+
+
+
+int main() {
+
+    toggle_time(0, "Time of merge_sections()");
+
+    merge_sections();
+
+    toggle_time(0, "Time of merge_sections()");
+
+
+
+    return 0;
+}
